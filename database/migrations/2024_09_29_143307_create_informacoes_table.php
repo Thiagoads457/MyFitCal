@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('informacoes', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 200);
             $table->float('pesoatual', 20);
             $table->float('idade', 20);
             $table->float('altura', 20);

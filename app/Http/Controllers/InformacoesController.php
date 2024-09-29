@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Informacoes;
 
 class InformacoesController extends Controller
 {
@@ -11,7 +12,8 @@ class InformacoesController extends Controller
      */
     public function index()
     {
-        //
+        $informacoes = Informacoes::all();
+        return view("informacoes.index", compact('informacoes'));
     }
 
     /**
@@ -19,7 +21,7 @@ class InformacoesController extends Controller
      */
     public function create()
     {
-        //
+        return view("informacoes.create");
     }
 
     /**
@@ -27,7 +29,8 @@ class InformacoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Informacoes::create($request->all());
+        return redirect("/informacoes");
     }
 
     /**
