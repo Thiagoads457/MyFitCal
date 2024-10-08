@@ -38,7 +38,8 @@ class InformacoesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $informacoes = Informacoes::findOrFail($id);
+        return view("infomacoes.show", compact('informacoes'));
     }
 
     /**
@@ -46,7 +47,8 @@ class InformacoesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $informacoes = Informacoes::findOrFail($id);
+        return view("infomacoes.edit", compact('informacoes'));
     }
 
     /**
@@ -54,7 +56,9 @@ class InformacoesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $informacoes = Informacoes::findOrFail($id);
+        $informacoes->update($request->all());
+        return redirect("/informacoes");
     }
 
     /**
@@ -62,6 +66,9 @@ class InformacoesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $informacoes = Informacoes:: findOrFail($id);
+        $informacoes->delete();
+        return redirect("/informacoes");
+
     }
 }
