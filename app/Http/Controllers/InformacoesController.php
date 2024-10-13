@@ -39,7 +39,7 @@ class InformacoesController extends Controller
     public function show(string $id)
     {
         $informacoes = Informacoes::findOrFail($id);
-        return view("infomacoes.show", compact('informacoes'));
+        return view("informacoes.show", compact('informacoes'));
     }
 
     /**
@@ -48,7 +48,7 @@ class InformacoesController extends Controller
     public function edit(string $id)
     {
         $informacoes = Informacoes::findOrFail($id);
-        return view("infomacoes.edit", compact('informacoes'));
+        return view("informacoes.edit", compact('informacoes'));
     }
 
     /**
