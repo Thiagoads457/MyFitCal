@@ -45,7 +45,7 @@
                     <a class="nav-link" href="/informacoes">Informações do Paciente</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="/refeicoes">Refeições</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
