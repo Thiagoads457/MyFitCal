@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col">
                 <label for="tipo" class="form-label">Tipo de Refeição</label>
-                <input type="text" name="nome" class="form-control"/>
+                <input type="text" name="tipo" class="form-control"/>
             </div>
         </div>
         <div class="row">
