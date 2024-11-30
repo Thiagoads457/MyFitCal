@@ -42,8 +42,8 @@ class RefeicoesController extends Controller
      */
     public function show(string $id)
     {
-        $refeicoes = Refeicoes::with('informacoes')->findOrFail($id);
-        return view('refeicoes.show', compact('refeicoes'));
+        $refeicao = Refeicoes::with('informacoes')->findOrFail($id);
+        return view('refeicoes.show', compact('refeicao'));
     }
 
     /**
@@ -51,9 +51,9 @@ class RefeicoesController extends Controller
      */
     public function edit(string $id)
     {
-        $refeicoes = refeicoes::with('informacoes')->findOrFail($id);
+        $refeicao = refeicoes::with('informacoes')->findOrFail($id);
         $informacoes = Informacoes::all();
-        return view('refeicoes.edit', compact('refeicoes', 'informacoes'));
+        return view('refeicoes.edit', compact('refeicao', 'informacoes'));
     }
 
     /**
@@ -61,8 +61,8 @@ class RefeicoesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $refeicoes = Refeicoes::findOrFail($id);
-        $refeicoes->update($request->all());
+        $refeicao = Refeicoes::findOrFail($id);
+        $refeicao->update($request->all());
         return redirect('/refeicoes');
     }
 
@@ -71,8 +71,8 @@ class RefeicoesController extends Controller
      */
     public function destroy(string $id)
     {
-        $refeicoes = Refeicoes::findOrFail($id);
-        $refeicoes->delete();
+        $refeicao = Refeicoes::findOrFail($id);
+        $refeicao->delete();
         return redirect('/refeicoes');
     }
 }

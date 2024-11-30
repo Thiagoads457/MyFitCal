@@ -17,15 +17,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($refeicoes as $refeicoes)
+            @foreach ($refeicoes as $refeicao)
                 <tr>
-                    <td>{{$refeicoes->tipo}}</td>
-                    <td>{{$refeicoes->descricao}}</td>
-                    <td>{{$refeicoes->quantidade}}</td>
-                    <td>{{$refeicoes->categoria->nome}}</td>
+                    <td>{{$refeicao->tipo}}</td>
+                    <td>{{$refeicao->descricao}}</td>
+                    <td>{{$refeicao->quantidade}}</td>
+                    <td>{{$refeicao->informacoes->nome}}</td>
                     <td>
-                        <a href='/refeicoes/{{$refeicoes->id}}/edit' class="btn btn-warning">Alterar</a>
-                        <a href='/refeicoes/{{$refeicoes->id}}' class='btn btn-danger'>Excluir</a>
+                        <a href='/refeicoes/{{$refeicao->id}}/edit' class="btn btn-warning">Alterar</a>
+                        <a href='/refeicoes/{{$refeicao->id}}' class='btn btn-danger'>Excluir</a>
                     </td>
                 </tr>
             @endforeach

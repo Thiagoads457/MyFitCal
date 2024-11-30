@@ -2,35 +2,35 @@
 
     <h5>Alterar Refeição</h5>
 
-    <form action="/refeicoes/{{$refeicoes->id}}" method="POST">
-        @CSRF
+    <form action="/refeicoes/{{$refeicao->id}}" method="POST">
+        @csrf
         @method('PUT')
         <div class="row">
             <div class="col">
                 <label for="tipo" class="form-label">Tipo de Refeição:</label>
-                <input type="text" name="tipo" class="form-control" value="{{ $refeicoes->tipo }}"/>
+                <input type="text" name="tipo" class="form-control" value="{{ $refeicao->tipo }}"/>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="descricao" class="form-label">Descrição:</label>
-                <input type="text" name="descricao" class="form-control" value="{{ $refeicoes->descricao }}"/>
+                <input type="text" name="descricao" class="form-control" value="{{ $refeicao->descricao }}"/>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="quantidade" class="form-label">Quantidade (gr):</label>
-                <input type="text" name="quantidade" class="form-control" value="{{ $quantidade->valor }}"/>
+                <input type="text" name="quantidade" class="form-control" value="{{ $refeicao->quantidade }}"/>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="informacoes_id" class="form-label">Informação do Paciente:</label>
                 <select name="informacoes_id" class="form-select">
-				    @foreach ($informacoes as $informacoes)
-                        <option value="{{$informacoes->id}}"
-                                {{ $refeicoes->informacoes->id == $informacoes->id ? 'selected' : '' }}>
-                                {{$informacoes->nome}}
+                    @foreach ($informacoes as $informacao)
+                        <option value="{{$informacao->id}}"
+                            {{ isset($refeicao->informacao) && $refeicao->informacao->id == $informacao->id ? 'selected' : '' }}>
+                            {{$informacao->nome}}
                         </option>
                     @endforeach
                 </select>
@@ -46,3 +46,4 @@
     </form>
 
 </x-app-layout>
+

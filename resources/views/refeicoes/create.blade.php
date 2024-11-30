@@ -3,7 +3,7 @@
     <h5>Nova Refeição</h5>
 
     <form action="/refeicoes" method="POST">
-        @CSRF
+        @csrf
         <div class="row">
             <div class="col">
                 <label for="tipo" class="form-label">Tipo de Refeição</label>
@@ -26,8 +26,8 @@
             <div class="col">
                 <label for="informacoes_id" class="form-label">Informação do Paciente</label>
                 <select name="informacoes_id" class="form-select">
-                    @foreach ($informacoes as $informacoes)
-                        <option value="{{$informacoes->id}}">{{$informacoes->nome}}</option>
+                    @foreach ($informacoes as $informacao)
+                        <option value="{{$informacao->id}}">{{$informacao->nome}}</option>
                     @endforeach
                 </select>
             </div>

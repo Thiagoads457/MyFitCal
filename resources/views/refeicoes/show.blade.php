@@ -1,32 +1,33 @@
 <x-app-layout>
 
-    <h5>Excluir Refeicoes</h5>
+    <h5>Excluir Refeição</h5>
 
-    <form action="/refeicoes/{{$refeicoes->id}}" method="POST">
-        @CSRF
+    <form action="/refeicoes/{{$refeicao->id}}" method="POST">
+        @csrf
         @method('DELETE')
         <div class="row">
             <div class="col">
                 <label for="tipo" class="form-label">Tipo de Refeição:</label>
-                <input type="text" name="tipo" class="form-control" value="{{$refeicoes->tipo}}" disabled/>
+                <input type="text" name="tipo" class="form-control" value="{{ $refeicao->tipo }}" disabled />
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="descricao" class="form-label">Descrição:</label>
-                <input type="text" name="descricao" class="form-control" value="{{$refeicoes->descricao}}" disabled/>
+                <input type="text" name="descricao" class="form-control" value="{{ $refeicao->descricao }}" disabled />
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="quantidade" class="form-label">Quantidade (gr):</label>
-                <input type="text" name="quantidade" class="form-control" value="{{$refeicoes->quantidade}}" disabled/>
+                <input type="text" name="quantidade" class="form-control" value="{{ $refeicao->quantidade }}" disabled />
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label for="informacoes" class="form-label">Informações do Paciente:</label>
-                <input type="text" name="informacoes" class="form-control" value="{{$refeicoes->informacoes->nome}}" disabled/>
+                <label for="nome" class="form-label">Informações do Paciente:</label>
+                <input type="text" name="nome" class="form-control" 
+                       value="{{ $refeicao->informacao?->nome ?? 'Sem informação' }}" disabled />
             </div>
         </div>
         <div class="row mt-3">

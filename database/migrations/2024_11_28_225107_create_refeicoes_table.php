@@ -18,8 +18,8 @@ return new class extends Migration
                     ->references('id')
                     ->on("informacoes")
                     ->onDelete("restrict");
-            $table->string("tipo",255);
-            $table->string("descricao", 255);
+            $table->string("tipo");
+            $table->string("descricao");
             $table->decimal("quantidade", 8, 2);
             $table->timestamps();
         });
